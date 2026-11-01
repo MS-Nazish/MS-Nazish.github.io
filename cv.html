@@ -83,6 +83,7 @@
     .entry ul li::before { content: "▸"; position: absolute; left: 0; color: var(--purple); font-size: 7.5pt; top: 0.3mm; }
     .stack { font-size: 7.8pt; color: var(--ink-3); margin-top: 0.3mm; }
     .stack b { color: var(--purple); font-weight: 600; }
+    .note { font-size: 8.2pt; color: var(--ink-3); font-style: italic; margin: -1mm 0 2.4mm; }
     .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 5mm; }
     .certs li { font-size: 8.8pt; display: flex; gap: 2.5mm; align-items: flex-start; }
     .certs li i { color: var(--purple); margin-top: 0.8mm; font-size: 8pt; }
@@ -170,21 +171,19 @@
       </div>
 
       <h2><i class="fa-solid fa-layer-group"></i> Projects</h2>
+      <p class="note">Live demos and source code: ms-nazish.github.io</p>
       <div class="entry">
-        <div class="entry-head"><strong>SiteSync — Site Attendance &amp; Labour Payroll</strong><em>MERN · PWA</em></div>
+        <div class="entry-head"><strong>SiteSync — Site Attendance &amp; Labour Payroll</strong><em>Web · Android</em></div>
         <ul>
           <li>GPS-geofenced, photo-verified attendance; weekly payroll with advances; PDF/Excel wage slips via WhatsApp/SMS.</li>
           <li>Offline attendance with IndexedDB auto-sync; full Urdu/English RTL interface.</li>
         </ul>
         <p class="stack"><b>Stack:</b> React · Node.js · Express · MongoDB · Tailwind CSS · PDFKit</p>
-        <p class="stack"><b>Live:</b> sitesync-pi.vercel.app</p>
       </div>
       <div class="entry">
-        <div class="entry-head"><strong>SchoolHub — School Management App</strong><em>Mobile</em></div>
+        <div class="entry-head"><strong>SchoolHub — School Management App</strong><em>Android · Web</em></div>
         <ul><li>Admin, Teacher and Parent roles: attendance, fees, salaries, timetable, chat and PDF report cards; role-based Firestore rules.</li></ul>
         <p class="stack"><b>Stack:</b> React Native · Expo · TypeScript · Firebase</p>
-        <p class="stack"><b>Live demo:</b> ms-nazish.github.io/schoolhub-school-management-app</p>
-        <p class="stack"><b>Android APK:</b> github.com/MS-Nazish/schoolhub-school-management-app/releases</p>
       </div>
 
       <h2><i class="fa-solid fa-certificate"></i> Certifications</h2>
