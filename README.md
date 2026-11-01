@@ -19,7 +19,7 @@ Plain HTML, CSS and JavaScript with no build step, so it can be hosted for free 
 GitHub (MS-Nazish), LinkedIn (nazish-khan-dev), email, projects and certificates were filled in from your real profiles. Still worth doing:
 
 1. **Profile photo**: save a square photo (about 800x800) as `assets/img/profile.jpg`. It appears automatically on the site and the CV.
-2. **Live demos**: add Live Demo links for SiteSync / SchoolHub once deployed.
+2. **Live demos**: SiteSync runs on Vercel (sitesync-pi.vercel.app). The SchoolHub demo is a static web export on the `gh-pages` branch of its repo, built with `npx expo export -p web` and `experiments.baseUrl` set to `/schoolhub-school-management-app`.
 3. **Contact form**: messages are sent to infotech8nz@gmail.com through FormSubmit (free, no account). After the very first message, open the activation email from FormSubmit and click **Activate Form** once.
 4. **CV**: after editing `cv.html`, regenerate the PDF (below).
 
