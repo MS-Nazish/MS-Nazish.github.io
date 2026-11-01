@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nazish Khan — CV</title>
+  <meta name="description" content="CV of Nazish Khan — Full-Stack Developer and AI Developer, BS Information Technology at GCU Hyderabad." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --ink: #16152b;
+      --ink-2: #4a4966;
+      --ink-3: #807f99;
+      --line: #e6e4f2;
+      --purple: #7c3aed;
+      --blue: #2563eb;
+      --tint: #f5f3ff;
+      --grad: linear-gradient(135deg, #7c3aed, #2563eb);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+    body { font-family: "Inter", system-ui, sans-serif; color: var(--ink); background: #e9e7f3; font-size: 10pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    .toolbar { display: flex; justify-content: center; gap: 10px; padding: 18px; }
+    .toolbar a, .toolbar button {
+      font: 600 0.9rem "Inter", sans-serif; padding: 10px 18px; border-radius: 999px; border: 0; cursor: pointer;
+      background: var(--grad); color: #fff; display: inline-flex; gap: 8px; align-items: center;
+    }
+    .toolbar a.ghost { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+
+    .page {
+      width: 210mm; min-height: 297mm; margin: 0 auto 30px; background: #fff;
+      display: grid; grid-template-columns: 68mm 1fr; box-shadow: 0 20px 60px -20px rgba(40, 20, 90, 0.35);
+    }
+
+    /* Sidebar */
+    .side { background: #14122b; color: #dcdaf0; padding: 11mm 8mm 9mm; }
+    .avatar {
+      width: 24mm; height: 24mm; border-radius: 50%; margin: 0 auto 3mm; display: grid; place-items: center;
+      background: var(--grad); color: #fff; font: 700 24pt "Space Grotesk", sans-serif; overflow: hidden; position: relative;
+      box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.35);
+    }
+    .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .side h3 {
+      font: 700 8.5pt "Inter", sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: #a78bfa;
+      margin: 4.5mm 0 2.4mm; padding-bottom: 1.2mm; border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .contact li { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 1.5mm; font-size: 8.4pt; word-break: break-word; }
+    .contact i { color: #a78bfa; width: 4mm; margin-top: 0.6mm; text-align: center; }
+    .skill-group { margin-bottom: 2.2mm; }
+    .skill-group strong { display: block; font-size: 8.4pt; color: #fff; margin-bottom: 1.2mm; }
+    .tags { display: flex; flex-wrap: wrap; gap: 1.1mm; }
+    .tags span { font-size: 7.8pt; padding: 0.6mm 2.2mm; border-radius: 99px; background: rgba(167, 139, 250, 0.14); color: #ddd6fe; }
+    .plain li { font-size: 8.4pt; margin-bottom: 0.8mm; padding-left: 3.5mm; position: relative; }
+    .plain li::before { content: ""; position: absolute; left: 0; top: 2.1mm; width: 1.4mm; height: 1.4mm; border-radius: 50%; background: #60a5fa; }
+    .lang { display: flex; justify-content: space-between; font-size: 8.4pt; margin-bottom: 0.8mm; }
+    .lang em { font-style: normal; color: #9b99b8; }
+
+    /* Main */
+    .main { padding: 11mm 11mm 9mm 10mm; }
+    .name { font: 700 28pt/1 "Space Grotesk", sans-serif; letter-spacing: -0.02em; }
+    .name span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .title { font-size: 11pt; font-weight: 600; color: var(--purple); margin: 2mm 0 3mm; }
+    .summary { color: var(--ink-2); font-size: 9pt; }
+    .main h2 {
+      display: flex; align-items: center; gap: 2.5mm; font: 700 11pt "Space Grotesk", sans-serif; color: var(--ink);
+      margin: 4.5mm 0 2.4mm; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .main h2 i { width: 6.5mm; height: 6.5mm; border-radius: 1.8mm; display: grid; place-items: center; background: var(--tint); color: var(--purple); font-size: 8pt; }
+    .main h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    .entry { margin-bottom: 2.4mm; }
+    .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; }
+    .entry-head strong { font-size: 10pt; }
+    .entry-head em { font-style: normal; font-size: 8.4pt; color: var(--ink-3); white-space: nowrap; }
+    .entry .sub { font-size: 8.8pt; color: var(--blue); font-weight: 500; margin-bottom: 1mm; }
+    .entry ul li { font-size: 8.6pt; color: var(--ink-2); padding-left: 3.5mm; position: relative; margin-bottom: 0.6mm; }
+    .entry ul li::before { content: "▸"; position: absolute; left: 0; color: var(--purple); font-size: 7.5pt; top: 0.3mm; }
+    .stack { font-size: 7.8pt; color: var(--ink-3); margin-top: 0.3mm; }
+    .stack b { color: var(--purple); font-weight: 600; }
+    .certs { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 5mm; }
+    .certs li { font-size: 8.8pt; display: flex; gap: 2.5mm; align-items: flex-start; }
+    .certs li i { color: var(--purple); margin-top: 0.8mm; font-size: 8pt; }
+    .certs li span { color: var(--ink-3); display: block; font-size: 8pt; }
+
+    @media print {
+      body { background: #fff; }
+      .toolbar { display: none; }
+      .page { margin: 0; box-shadow: none; height: 297mm; overflow: hidden; }
+    }
+    @media screen and (max-width: 820px) {
+      .page { width: 100%; min-height: 0; grid-template-columns: 1fr; }
+      .side { order: 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a class="ghost" href="index.html"><i class="fa-solid fa-arrow-left"></i> Portfolio</a>
+    <a href="assets/cv/Nazish-Khan-CV.pdf" download><i class="fa-solid fa-download"></i> Download PDF</a>
+    <button onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+  </div>
+
+  <!-- After editing, re-export the PDF (see README). -->
+  <div class="page">
+    <aside class="side">
+      <div class="avatar">N<img src="assets/img/profile.jpg" alt="" onerror="this.remove()" /></div>
+
+      <h3>Contact</h3>
+      <ul class="contact">
+        <li><i class="fa-solid fa-envelope"></i> infotech8nz@gmail.com</li>
+        <li><i class="fa-solid fa-location-dot"></i> Hyderabad, Sindh, Pakistan</li>
+        <li><i class="fa-brands fa-github"></i> github.com/MS-Nazish</li>
+        <li><i class="fa-brands fa-linkedin-in"></i> linkedin.com/in/nazish-khan-dev</li>
+      </ul>
+
+      <h3>Technical Skills</h3>
+      <div class="skill-group"><strong>Frontend</strong><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Tailwind CSS</span><span>Vite</span></div></div>
+      <div class="skill-group"><strong>Mobile</strong><div class="tags"><span>React Native</span><span>Expo</span><span>PWA</span></div></div>
+      <div class="skill-group"><strong>Backend</strong><div class="tags"><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>JWT Auth</span></div></div>
+      <div class="skill-group"><strong>Database</strong><div class="tags"><span>MongoDB</span><span>PostgreSQL</span><span>MySQL</span><span>Supabase</span><span>Firebase</span></div></div>
+      <div class="skill-group"><strong>AI &amp; Data</strong><div class="tags"><span>Python</span><span>Prompt Engineering</span><span>Generative AI</span><span>SQL</span><span>R</span><span>Data Visualization</span></div></div>
+      <div class="skill-group"><strong>Tools</strong><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Postman</span><span>Vercel</span><span>WordPress</span></div></div>
+
+      <h3>Soft Skills</h3>
+      <ul class="plain">
+        <li>Problem solving</li>
+        <li>Clear client communication</li>
+        <li>Time management</li>
+        <li>Fast, self-driven learner</li>
+      </ul>
+
+      <h3>Languages</h3>
+      <div class="lang">English <em>Professional</em></div>
+      <div class="lang">Urdu <em>Fluent</em></div>
+      <div class="lang">Sindhi <em>Native</em></div>
+    </aside>
+
+    <main class="main">
+      <h1 class="name">Nazish Khan<span>.</span></h1>
+      <p class="title">Full-Stack Developer &nbsp;·&nbsp; React Native &nbsp;·&nbsp; AI &amp; Data</p>
+      <p class="summary">
+        BS Information Technology graduate of Government College University Hyderabad who builds real-world
+        web and mobile applications with React, React Native, Node.js, Express and MongoDB / PostgreSQL /
+        Firebase. Google-certified in Data Analytics, AI Essentials and Prompting Essentials. Focused on clean
+        code, polished interfaces and dependable delivery. Open to freelance projects and remote roles.
+      </p>
+
+      <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      <div class="entry">
+        <div class="entry-head"><strong>BS Information Technology</strong><em>2023 – 2026</em></div>
+        <p class="sub">Government College University Hyderabad (GCUH), Sindh</p>
+      </div>
+
+      <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+      <div class="entry">
+        <div class="entry-head"><strong>Freelance Full-Stack Developer</strong><em>Present</em></div>
+        <p class="sub">Self-employed · Remote</p>
+        <ul>
+          <li>Build full-stack web, mobile and PWA apps for schools, contractors and small businesses, from UI to API to database.</li>
+          <li>Implement JWT and role-based access, PDF/Excel reporting, offline sync and Urdu / RTL interfaces.</li>
+          <li>Deploy on Vercel and Netlify; manage code with Git &amp; GitHub.</li>
+        </ul>
+      </div>
+
+      <h2><i class="fa-solid fa-layer-group"></i> Projects</h2>
+      <div class="entry">
+        <div class="entry-head"><strong>SiteSync — Site Attendance &amp; Labour Payroll</strong><em>MERN · PWA</em></div>
+        <ul>
+          <li>GPS-geofenced, photo-verified attendance; weekly payroll with advances; PDF/Excel wage slips via WhatsApp/SMS.</li>
+          <li>Offline attendance with IndexedDB auto-sync; full Urdu/English RTL interface.</li>
+        </ul>
+        <p class="stack"><b>Stack:</b> React · Node.js · Express · MongoDB · Tailwind CSS · PDFKit · Twilio</p>
+      </div>
+      <div class="entry">
+        <div class="entry-head"><strong>SchoolHub — School Management App</strong><em>Mobile</em></div>
+        <ul><li>Admin, Teacher and Parent roles: attendance, fees, salaries, timetable, chat and PDF report cards; role-based Firestore rules.</li></ul>
+        <p class="stack"><b>Stack:</b> React Native · Expo · TypeScript · Firebase</p>
+      </div>
+
+      <h2><i class="fa-solid fa-certificate"></i> Certifications</h2>
+      <ul class="certs">
+        <li><i class="fa-solid fa-award"></i><div>Google Data Analytics Professional Certificate<span>Google · Coursera · 2026</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>Freelancing<span>DigiSkills.pk</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>Google AI Essentials Specialization<span>Google · Coursera · 2025</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>Data Analytics &amp; Business Intelligence<span>DigiSkills.pk</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>Google Prompting Essentials Specialization<span>Google · Coursera · 2025</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>WordPress · Communication &amp; Soft Skills<span>DigiSkills.pk</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>+ 21 Google course certificates<span>incl. IT Security, Tech Support, R</span></div></li>
+        <li><i class="fa-solid fa-award"></i><div>Graphic Design · Video Editing<span>DigiSkills.pk</span></div></li>
+      </ul>
+    </main>
+  </div>
+</body>
+</html>
