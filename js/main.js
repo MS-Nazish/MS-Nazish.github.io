@@ -8,10 +8,10 @@ const CONFIG = {
   github: "https://github.com/MS-Nazish",
   linkedin: "https://www.linkedin.com/in/nazish-khan-dev",
   email: "infotech8nz@gmail.com",
-  // Optional: free form backend so messages arrive in your inbox without opening a mail app.
-  // Create a form at https://formspree.io (free plan) and paste its endpoint, e.g. "https://formspree.io/f/abcdwxyz".
+  // Free form backend (FormSubmit) so messages arrive in your inbox without a mail app.
+  // The first message sends an activation email to this address — click "Activate Form" once.
   // Leave empty to fall back to opening the visitor's email app.
-  formEndpoint: "",
+  formEndpoint: "https://formsubmit.co/ajax/infotech8nz@gmail.com",
 };
 
 document.documentElement.classList.remove("no-js");
@@ -179,15 +179,21 @@ form.addEventListener("submit", async (e) => {
       const res = await fetch(CONFIG.formEndpoint, {
         method: "POST",
         headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          _subject: `Portfolio: ${data.subject || "New message"} — from ${data.name}`,
+          _template: "table",
+        }),
       });
-      if (!res.ok) throw new Error();
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== "true") throw new Error(json.message);
       form.reset();
       statusEl.className = "form-status ok";
       statusEl.textContent = "Thanks! Your message has been sent — I'll reply within 24 hours.";
-    } catch {
+    } catch (err) {
       statusEl.className = "form-status err";
-      statusEl.textContent = `Something went wrong. Please email me directly at ${CONFIG.email}.`;
+      statusEl.textContent = `Sorry, the message couldn't be sent. Please email me directly at ${CONFIG.email}.`;
+      if (err.message) console.warn("Contact form:", err.message);
     }
     return;
   }

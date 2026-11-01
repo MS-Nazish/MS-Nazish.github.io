@@ -20,7 +20,7 @@ GitHub (MS-Nazish), LinkedIn (nazish-khan-dev), email, projects and certificates
 
 1. **Profile photo**: save a square photo (about 800x800) as `assets/img/profile.jpg`. It appears automatically on the site and the CV.
 2. **Live demos**: add Live Demo links for SiteSync / SchoolHub once deployed.
-3. **Contact form (optional)**: create a free form at https://formspree.io and paste its endpoint into `CONFIG.formEndpoint` in `js/main.js`. Without it, the form opens the visitor's email app.
+3. **Contact form**: messages are sent to infotech8nz@gmail.com through FormSubmit (free, no account). After the very first message, open the activation email from FormSubmit and click **Activate Form** once.
 4. **CV**: after editing `cv.html`, regenerate the PDF (below).
 
 ## Regenerate the CV PDF
